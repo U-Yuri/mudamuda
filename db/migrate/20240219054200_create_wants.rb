@@ -5,6 +5,7 @@ class CreateWants < ActiveRecord::Migration[7.0]
       t.integer :money
       t.integer :year
       t.integer :month
+      t.references :category, foreign_key: true
 
       t.timestamps
     end
