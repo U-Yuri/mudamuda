@@ -23,8 +23,11 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_19_054200) do
     t.integer "money"
     t.integer "year"
     t.integer "month"
+    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_wants_on_category_id"
   end
 
+  add_foreign_key "wants", "categories"
 end
