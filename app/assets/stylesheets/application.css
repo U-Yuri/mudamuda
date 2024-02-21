@@ -13,3 +13,51 @@
  *= require_tree .
  *= require_self
  */
+body{
+  font-family: 'Kosugi', sans-serif;
+  background-color:beige;
+  color: grey;
+  font-weight: bold;
+}
+ .wrapper{
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 30px;
+  background-color: white;
+ }
+ h1{
+  font-size: 3rem;
+  text-align: center;
+  color:cadetblue;
+ }
+
+ .button_wrap{
+  text-align: center;
+  padding: 20px 0;
+ }
+
+ .sign_in_button {
+  border: 0;
+  line-height: 2.5;
+  padding: 0 40px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  background-color: cadetblue;
+  box-shadow:
+    inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.sign_in_button:hover {
+  background-color: gray;
+}
+
+.sign_in_button:active {
+  box-shadow:
+    inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
