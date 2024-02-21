@@ -18,3 +18,9 @@ Want.create(
   month: '2',
   category_id: '1'
 )
+
+User.create(
+  email: 'test',
+  password: 'password',
+  password_confirmation: 'password'
+)
