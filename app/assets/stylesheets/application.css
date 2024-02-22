@@ -61,3 +61,9 @@ body{
     inset -2px -2px 3px rgba(255, 255, 255, 0.6),
     inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
+.login_right{
+  text-align: right;
+}
+.login_center{
+  text-align: center;
+}
