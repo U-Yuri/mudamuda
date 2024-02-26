@@ -6,4 +6,22 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-Category.create(name: 'ガジェット' , color: 'green')
+User.create!(
+  email: 'test@abc.com',
+  password: 'password',
+  password_confirmation: 'password'
+)
+
+Category.create!(
+  name: 'ガジェット' , 
+  color: 'green'
+)
+
+Want.create!(
+  name: 'Macbook air ',
+  money: '162,800',
+  year: '2024',
+  month: '2',
+  category_id: '1',
+  user_id: '1'
+)
