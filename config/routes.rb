@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
-  resources :mudamuda, only: [:index, :new, :create, :edit, :update, :destroy, :show]
+  root "mudamuda#index"
+
+  # resources :mudamuda, only: [:index, :new, :create, :edit, :update, :destroy, :show]
 end
