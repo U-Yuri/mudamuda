@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "mudamuda#index"
 
-  get "wants", to: "mudamuda#top"
+  get "wants", to: "wants#top"
 
-  # resource :mudamuda, only: [:wants]
+  # resource :wants, only: [:wants]
 end
