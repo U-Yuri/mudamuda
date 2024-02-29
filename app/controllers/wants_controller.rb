@@ -23,7 +23,7 @@ class WantsController < ApplicationController
       name: params[:name],
       money: params[:money],
       user_id: current_user.id,
-      category_id: "1"
+      category_id: "1" #まだ登録していないのでとりあえず ”１” を入力している（※のちに変更）
     )
 
     redirect_to "/wants"
