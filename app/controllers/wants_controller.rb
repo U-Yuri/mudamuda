@@ -6,4 +6,8 @@ class WantsController < ApplicationController
       redirect_to "/users/sign_in"
     end
   end
+
+  def new
+    render "new"
+  end
 end

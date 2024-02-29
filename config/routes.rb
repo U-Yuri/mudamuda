@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root "mudamuda#index"
 
   get "wants", to: "wants#my_page"
+  get "wants/new", to: "wants#new"
 
   # resource :wants, only: [:wants]
 end
