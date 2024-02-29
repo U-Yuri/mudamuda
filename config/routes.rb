@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get "wants", to: "wants#my_page"
   get "wants/new", to: "wants#new"
+  post "wants", to: "wants#create"
 
   # resource :wants, only: [:wants]
 end

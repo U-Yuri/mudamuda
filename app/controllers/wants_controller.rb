@@ -13,4 +13,19 @@ class WantsController < ApplicationController
     render "new"
     @wants = Want.new
   end
+
+  def wants_params
+    params.require(:wants).permit(:name, :money)
+  end
+
+  def create
+    Want.create!(
+      name: params[:name],
+      money: params[:money],
+      user_id: current_user.id,
+      category_id: "1"
+    )
+
+    redirect_to "/wants"
+  end
 end
