@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+  <h1>Muda0</h1>
+  <ul>
+      <li>
+        <h2><%= @wants.name %></h2>
+        <p>¥<%= @wants.money %><p>
+      </li>
+  </ul>
+
+</div>

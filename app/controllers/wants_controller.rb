@@ -29,4 +29,10 @@ class WantsController < ApplicationController
 
     redirect_to "/wants"
   end
+
+  def show
+    @wants = Want.find(params[:id])
+    render "show"
+  end
+
 end
