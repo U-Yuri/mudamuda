@@ -3,6 +3,14 @@
   <h1>Muda0</h1>
   <div class="button"><%= link_to "欲しいものを登録", wants_new_path %></div>
 
+  <h2>List</h2>
+  <ul>
+    <% @wants.each do |want| %>
+      <li>
+        <h3><%= want.name %></h3>
+        <p>¥<%= want.money %><p>
+      </li>
+    <% end %>
+  </ul>
+
 </div>
-
-
