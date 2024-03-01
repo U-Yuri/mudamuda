@@ -35,4 +35,10 @@ class WantsController < ApplicationController
     render "show"
   end
 
+  def delete
+    @wants = Want.find(params[:id])
+    @wants.destroy
+    redirect_to "/wants"
+  end
+
 end
