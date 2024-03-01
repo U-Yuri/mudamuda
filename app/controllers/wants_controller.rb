@@ -1,6 +1,7 @@
 class WantsController < ApplicationController
   def my_page
-    @wants = Want.all
+    @wants= Want.where(user_id: current_user.id)
+    # @wants = Want.all
 
     if user_signed_in?
       render "wants/my_page"
