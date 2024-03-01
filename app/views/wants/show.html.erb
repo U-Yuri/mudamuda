@@ -8,4 +8,9 @@
       </li>
   </ul>
 
+  <%= form_with url: want_url(@wants), method: :patch do |form| %>
+    <%= form.button "削除", formmethod: :delete, deta: { confirm: "Are you sure?" }  %>
+    <%= form.button "update" %>
+  <% end %>
+
 </div>
