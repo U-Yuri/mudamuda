@@ -7,7 +7,7 @@
   <ul>
     <% @wants.each do |want| %>
       <li>
-        <h3><%= want.name %></h3>
+        <%= link_to want.name, wants_url(want)%>
         <p>¥<%= want.money %><p>
       </li>
     <% end %>
