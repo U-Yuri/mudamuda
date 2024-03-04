@@ -15,10 +15,6 @@ class WantsController < ApplicationController
     @wants = Want.new
   end
 
-  def wants_params
-    params.require(:wants).permit(:name, :money)
-  end
-
   def create
     Want.create!(
       name: params[:name],
@@ -44,5 +40,17 @@ class WantsController < ApplicationController
   def edit
     @wants = Want.find(params[:id])
     render "edit"
+  end
+
+  def update
+    @wants = Want.find(params[:id])
+    @wants.update(want_params)
+    redirect_to "/wants"
+  end
+
+  private
+
+  def want_params
+    params.require(:want).permit(:name, :money)
   end
 end
