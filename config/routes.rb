@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   post "wants", to: "wants#create"
   get "wants/:id", to: "wants#show", as: 'want' #pathとURLヘルパー作る。want_path, want_urlを作る。
   delete "wants/:id", to: "wants#delete"
+  get "wants/:id/edit", to: "wants#edit", as: 'edit_want'
+  patch "wants/:id", to: "wants#update"
 
   # resource :wants, only: [:wants]
 end
