@@ -41,4 +41,8 @@ class WantsController < ApplicationController
     redirect_to "/wants"
   end
 
+  def edit
+    @wants = Want.find(params[:id])
+    render "edit"
+  end
 end
