@@ -12,9 +12,33 @@ User.create!(
   password_confirmation: 'password'
 )
 
+#カテゴリー
 Category.create!(
-  name: 'ガジェット' , 
-  color: 'green'
+  name: 'ガジェット'
+)
+
+Category.create!(
+  name: 'ファッション'
+)
+
+Category.create!(
+  name: 'インテリア'
+)
+
+Category.create!(
+  name: '家具'
+)
+
+Category.create!(
+  name: '電化製品'
+)
+
+Category.create!(
+  name: '子供'
+)
+
+Category.create!(
+  name: 'その他'
 )
 
 Want.create!(
