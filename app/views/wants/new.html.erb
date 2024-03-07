@@ -2,6 +2,15 @@
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
   <h1>Muda0</h1>
   <%= form_with url: wants_path, model: @wants do |form| %>
+   
+   <select name="category" >
+      <% @categories.each do |category| %>
+        
+          <option value= <%= category.id %> ><%= category.name %></option>
+        
+      <% end %>
+      </select>
+    
     <div><%= form.label :商品名 %> <%= form.text_field :name %></div>
     <div><%= form.label :金額 %> <%= form.text_field :money %></div>
     <div><%= form.submit "新規登録" %></div>

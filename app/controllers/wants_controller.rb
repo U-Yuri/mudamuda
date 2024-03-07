@@ -11,8 +11,10 @@ class WantsController < ApplicationController
   end
 
   def new
+    @categories = Category.all
     render "new"
     @wants = Want.new
+   
   end
 
   def create
@@ -20,7 +22,7 @@ class WantsController < ApplicationController
       name: params[:name],
       money: params[:money],
       user_id: current_user.id,
-      category_id: "1" #まだ登録していないのでとりあえず ”１” を入力している（※のちに変更）
+      category_id: params[:category]
     )
 
     redirect_to "/wants"
