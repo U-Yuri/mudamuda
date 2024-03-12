@@ -1,7 +1,23 @@
 class WantsController < ApplicationController
   def my_page
-    @wants= Want.where(user_id: current_user.id)
-    # @wants = Want.all
+    @categories = Category.all
+    
+    # if params["順番"] == "古い"
+    #   @wants = Want.where(user_id: current_user.id).order(created_at: :asc)
+    # else
+    #   @wants = Want.where(user_id: current_user.id).order(created_at: :desc)
+    # end
+    if params[:category].present?
+      @wants = Want.where(user_id: current_user.id, category_id: params[:category]) 
+    else
+      @wants = Want.where(user_id: current_user.id)
+    end
+    if params["順番"] == "古い"
+      @wants = @wants.order(created_at: :asc)
+    else
+      @wants = @wants.order(created_at: :desc)
+    end
+    
 
     if user_signed_in?
       render "wants/my_page"
