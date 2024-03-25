@@ -56,6 +56,7 @@ class WantsController < ApplicationController
   end
 
   def edit
+    @categories = Category.all
     @wants = Want.find(params[:id])
     render "edit"
   end
@@ -69,6 +70,6 @@ class WantsController < ApplicationController
   private
 
   def want_params
-    params.require(:want).permit(:name, :money)
+    params.require(:want).permit(:name, :money, :category_id)
   end
 end
