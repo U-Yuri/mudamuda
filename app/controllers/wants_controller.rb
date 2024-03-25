@@ -12,6 +12,7 @@ class WantsController < ApplicationController
     else
       @wants = Want.where(user_id: current_user.id)
     end
+    
     if params["順番"] == "古い"
       @wants = @wants.order(created_at: :asc)
     else
