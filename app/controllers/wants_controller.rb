@@ -1,7 +1,23 @@
 class WantsController < ApplicationController
   def my_page
-    @wants= Want.where(user_id: current_user.id)
-    # @wants = Want.all
+    @categories = Category.all
+    
+    # if params["順番"] == "古い"
+    #   @wants = Want.where(user_id: current_user.id).order(created_at: :asc)
+    # else
+    #   @wants = Want.where(user_id: current_user.id).order(created_at: :desc)
+    # end
+    if params[:category].present?
+      @wants = Want.where(user_id: current_user.id, category_id: params[:category]) 
+    else
+      @wants = Want.where(user_id: current_user.id)
+    end
+    if params["順番"] == "古い"
+      @wants = @wants.order(created_at: :asc)
+    else
+      @wants = @wants.order(created_at: :desc)
+    end
+    
 
     if user_signed_in?
       render "wants/my_page"
@@ -11,8 +27,10 @@ class WantsController < ApplicationController
   end
 
   def new
+    @categories = Category.all
     render "new"
     @wants = Want.new
+   
   end
 
   def create
@@ -20,7 +38,7 @@ class WantsController < ApplicationController
       name: params[:name],
       money: params[:money],
       user_id: current_user.id,
-      category_id: "1" #まだ登録していないのでとりあえず ”１” を入力している（※のちに変更）
+      category_id: params[:category]
     )
 
     redirect_to "/wants"
@@ -38,6 +56,7 @@ class WantsController < ApplicationController
   end
 
   def edit
+    @categories = Category.all
     @wants = Want.find(params[:id])
     render "edit"
   end
@@ -51,6 +70,6 @@ class WantsController < ApplicationController
   private
 
   def want_params
-    params.require(:want).permit(:name, :money)
+    params.require(:want).permit(:name, :money, :category_id)
   end
 end

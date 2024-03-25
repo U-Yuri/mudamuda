@@ -4,6 +4,20 @@
   <div class="button"><%= link_to "欲しいものを登録", wants_new_path %></div>
 
   <h2>List</h2>
+  <form action="" method="get">
+    <select name="category" >
+        <option value= "">全ての商品</option>
+        <% @categories.each do |category| %>
+            <option value= <%= category.id %> ><%= category.name %></option>
+        <% end %>
+    </select>
+    <select name="順番" >
+      <option value= "新しい">新しい順</option>
+      <option value= "古い">古い順</option>
+    </select>
+    <input type="submit" value="検索">
+  <form>
+
   <ul>
     <% @wants.each do |want| %>
       <li>
