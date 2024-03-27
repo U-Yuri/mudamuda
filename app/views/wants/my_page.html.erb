@@ -21,6 +21,7 @@
   <ul>
     <% @wants.each do |want| %>
       <li>
+        <%= image_tag url_for(want.image)%>
         <%= link_to want.name, want_url(want)%>
         <p>¥<%= want.money %><p>
       </li>
