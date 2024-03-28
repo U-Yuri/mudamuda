@@ -24,6 +24,7 @@
         <%= image_tag want.image.variant(resize_to_limit: [100, 100])%>
         <%= link_to want.name, want_url(want)%>
         <p>¥<%= want.money %><p>
+        <%= want.created_at %>
       </li>
     <% end %>
   </ul>

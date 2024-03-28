@@ -3,7 +3,7 @@
   <h1>Muda0</h1>
   <ul>
       <li>
-        <%= image_tag url_for(@wants.image)%>
+        <%= image_tag @wants.image.variant(resize_to_limit: [500, 500])%>
         <h2><%= @wants.name %></h2>
         <p>¥<%= @wants.money %><p>
       </li>
