@@ -35,12 +35,14 @@ class WantsController < ApplicationController
   end
 
   def create
-    Want.create!(
+    want = Want.create!(
       name: params[:name],
       money: params[:money],
       user_id: current_user.id,
       category_id: params[:category]
     )
+
+    want.image.attach(params[:image])
 
     redirect_to "/wants"
   end
@@ -71,6 +73,6 @@ class WantsController < ApplicationController
   private
 
   def want_params
-    params.require(:want).permit(:name, :money, :category_id)
+    params.require(:want).permit(:name, :money, :category_id, :image)
   end
 end

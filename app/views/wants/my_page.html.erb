@@ -21,8 +21,10 @@
   <ul>
     <% @wants.each do |want| %>
       <li>
-        <%= link_to want.name, want_url(want)%>
+        <%= image_tag want.image.variant(resize_to_limit: [100, 100])%>
+        <%= link_to want.name, want_url(want)%><small><%= want.category.name%></small>
         <p>¥<%= want.money %><p>
+        <%= want.created_at %>
       </li>
     <% end %>
   </ul>
