@@ -1,10 +1,12 @@
 <div class="wrapper">
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
   <h1>Muda0</h1>
+  
   <ul>
       <li>
         <%= image_tag @wants.image.variant(resize_to_limit: [500, 500])%>
         <h2><%= @wants.name %></h2>
+        <small><%= @wants.category.name%></small>
         <p>¥<%= @wants.money %><p>
       </li>
   </ul>
