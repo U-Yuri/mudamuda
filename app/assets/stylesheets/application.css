@@ -148,3 +148,31 @@ h2{
 .under{
   margin-top: auto;
 }
+
+.top_img{
+  width: 350px;
+}
+
+.total_box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 30px 0;
+}
+
+.total{
+  text-align: center;
+  font-size: 2rem;
+  color: #333333;
+}
+
+.total span{
+  color: red;
+  font-size: 3.5rem;
+  border-bottom: solid red 2px;
+}
+
+.total small{
+  font-size: 1.2rem;
+}
