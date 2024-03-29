@@ -13,29 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+ /* all */
 body{
   font-family: 'Kosugi', sans-serif;
-  background-color:beige;
   color: grey;
   font-weight: bold;
+  background-color: lightyellow;
 }
- .wrapper{
-  width: 50%;
-  margin: 0 auto;
-  border-radius: 10px;
-  padding: 30px;
-  background-color: white;
- }
- h1{
-  font-size: 3rem;
-  text-align: center;
-  color:cadetblue;
- }
 
- .button_wrap{
-  text-align: center;
-  padding: 20px 0;
- }
+a{
+  text-decoration: none;
+}
+
+/* トップページ */
 
  .sign_in_button {
   border: 0;
@@ -66,4 +57,94 @@ body{
 }
 .login_center{
   text-align: center;
+}
+
+/* my_page */
+
+.wrapper{
+  margin-top: 20px;
+  padding: 20px;
+  text-align: center;
+ }
+
+ h1{
+  color: black;
+  font-family: "Nico Moji";
+ }
+
+ .button_wrap{
+  text-align: center;
+  padding: 20px 0;
+ }
+
+header{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  background-color: gold;
+  padding: 0 20px;
+ }
+
+h2{
+  color: #333333;
+}
+
+.new_button{
+  color: white;
+  background-color: orange;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.new_button:hover{
+  background: lightyellow;
+  color: black;
+  transition: 0.3s;
+}
+
+.list_background{
+  background-color: lightyellow;
+}
+
+.container{
+  display: flex;
+  flex-wrap:wrap;
+  padding: 30px 0;
+}
+
+.back_img{
+  position: relative;
+}
+
+.under_text{
+  font-size: 0.8rem;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0%;
+  left: 5%;
+  color: white;
+  background-color: rgba(0,0,0,0.6);
+  padding: 2px 5px;
+}
+
+.box_text{
+  padding-left: 10%;
+}
+
+.text_hight{
+  line-height: 2rem;
+}
+
+.box{
+  background-color: white;
+  padding: 10px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+}
+
+.under{
+  margin-top: auto;
 }

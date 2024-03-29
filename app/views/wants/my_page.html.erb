@@ -1,32 +1,47 @@
-<div class="wrapper">
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-  <h1>Muda0</h1>
-  <div class="button"><%= link_to "欲しいものを登録", wants_new_path %></div>
+<head>
+ <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+</head>
 
-  <h2>List</h2>
-  <form action="" method="get">
-    <select name="category" >
-        <option value= "">全ての商品</option>
-        <% @categories.each do |category| %>
-            <option value= <%= category.id %> ><%= category.name %></option>
+<header>
+  <div><h1>むだゼロ</h1></div>
+  <div>
+    <%= link_to "欲しいものを登録", wants_new_path, class: "new_button" %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+  </div>
+</header>
+  <div class="wrapper">
+    <h2>欲しいものリスト</h2>
+    <form action="" method="get">
+        <select name="category" >
+            <option value= "">全ての商品</option>
+            <% @categories.each do |category| %>
+                <option value= <%= category.id %> ><%= category.name %></option>
+            <% end %>
+        </select>
+        <select name="順番" >
+          <option value= "新しい">新しい順</option>
+          <option value= "古い">古い順</option>
+        </select>
+        <input type="submit" value="検索">
+    </form>
+
+    <div class="container">
+        <% @wants.each do |want| %>
+          <%= link_to(want) do%>
+            <div class="box">
+              <div class="back_img img_box">
+                <%= image_tag want.image.variant(resize_to_limit: [200, 200])%>
+                <p class="under_text">¥<%= want.money %></p>
+              </div>
+              <div class="under">
+                <%= want.name %>
+                <small><%= want.category.name %></small><br>
+                <small><%= want.created_at %></small>
+              </div>
+            </div>
         <% end %>
-    </select>
-    <select name="順番" >
-      <option value= "新しい">新しい順</option>
-      <option value= "古い">古い順</option>
-    </select>
-    <input type="submit" value="検索">
-  <form>
 
-  <ul>
-    <% @wants.each do |want| %>
-      <li>
-        <%= image_tag want.image.variant(resize_to_limit: [100, 100])%>
-        <%= link_to want.name, want_url(want)%><small><%= want.category.name%></small>
-        <p>¥<%= want.money %><p>
-        <%= want.created_at %>
-      </li>
-    <% end %>
-  </ul>
+      <% end %>
+    </div>
 
-</div>
+  </div>
