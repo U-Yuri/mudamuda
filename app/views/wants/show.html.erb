@@ -1,19 +1,55 @@
-<div class="wrapper">
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-  <h1>Muda0</h1>
-  
-  <ul>
-      <li>
-        <%= image_tag @wants.image.variant(resize_to_limit: [500, 500])%>
-        <h2><%= @wants.name %></h2>
-        <small><%= @wants.category.name%></small>
-        <p>¥<%= @wants.money %><p>
-      </li>
-  </ul>
+<head>
+ <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+</head>
 
-  <%= form_with url: want_url(@wants), method: :patch do |form| %>
-    <%= form.button "削除", formmethod: :delete, deta: { confirm: "Are you sure?" }  %>
-    <%= link_to "編集", edit_want_url(@wants) %>
-  <% end %>
+<header>
+  <div><h1><span class="logo-jp">むだゼロ</span><br>muda0</h1></div>
+  <div>
+    <%= link_to "欲しいものを登録", wants_new_path, class: "new_button" %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+  </div>
+</header>
+
+<div class="total_box">
+  <div>
+    <%= image_tag 'top_img.png', class: 'top_img' %>
+  </div>
+  <p>今でも欲しいもの？</p>
+</div>
+
+<div class="wrapper">
+  <div class="want-box">
+    <div class="want-img-box">
+      <%= image_tag @wants.image.variant(resize_to_limit: [500, 500]), class: 'want-img' %>
+    </div>
+
+    <div class="want-text-box">
+            <h2><%= @wants.name %><span><%= @wants.category.name%></span></h2>
+            <p><%= number_to_currency(@wants.money, unit: "¥", precision: 0) %><p>
+
+      <%= form_with url: want_url(@wants), method: :patch do |form| %>
+        <%= form.button "削除する", formmethod: :delete, deta: { confirm: "Are you sure?" }, class: "delete-btn"  %>
+        <%= link_to(edit_want_url(@wants)) do %>
+        <button class="edit-btn">編集する</button>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
 </div>
+
+<footer class="mobile_only">
+  <div class="menu-container">
+    <div>
+      <%= link_to(wants_path) do %>
+        <%= image_tag 'home.png', class: 'icon' %><br>ホーム
+      <% end %>
+    </div>
+    <div>
+      <%= link_to(wants_new_path) do %>
+        <%= image_tag 'add.png', class: 'icon' %><br>登録
+      <% end %>
+    </div>
+    <div class="red">合計:<%= number_to_currency(@sum, unit: "¥", precision: 0) %></div>
+  </div>
+</footer>

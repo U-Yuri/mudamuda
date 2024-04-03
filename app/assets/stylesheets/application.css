@@ -306,6 +306,69 @@ h1 span{
   border: solid cadetblue 1.5px;
 }
 
+/* showページ */
+.want-box{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.want-text-box{
+  padding-left: 30px;
+}
+
+.want-text-box span{
+  font-size: 0.7rem;
+  margin-left: 10px;
+}
+
+.want-text-box p{
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.edit-btn,
+.delete-btn{
+  border: 0;
+  line-height: 2.5;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow:
+    inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.delete-btn{
+  background-color: orange
+}
+
+.edit-btn{
+  background-color: cadetblue;
+  margin-top: 10px;
+}
+
+.edit-btn:hover,
+.delete-btn:hover{
+  background-color: white;
+  color: #333333;
+  transition: 0.5s;
+}
+
+.edit-btn:hover{
+  border: solid cadetblue 1.5px;
+}
+
+.delete-btn:hover{
+  border: solid orange 1.5px;
+}
+
+
+
+
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーーーレスポンシブ */
 
 @media screen and (max-width:600px){
@@ -450,6 +513,39 @@ h1 span{
 .sign-up-btn{
   width: 100%;
 }
+
+/* showページ */
+.want-box{
+  flex-direction: column;
+}
+
+.want-text-box{
+  padding-left: 0px;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.want-img{
+  width: 250px;
+}
+
+.want-img-box{
+  text-align: center;
+}
+
+.want-text-box h2{
+  margin-bottom: 0;
+}
+
+.want-text-box p{
+  margin-top: 0;
+}
+
+.edit-btn{
+  margin-bottom: 70px;
+}
+
+
 
 
 
