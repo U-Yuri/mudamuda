@@ -1,18 +1,30 @@
-<div class="wrapper">
-  <div class="login_right">
-    <%= link_to "ログイン", new_user_session_path %>
-  </div>
-  <h1>Muda0</h1>
-  <p>このアプリは物欲を抑制し無駄使いをなくすアプリになります。<br>
-  欲しいものを登録することで一度満足感を満たし、登録したほしいもの情報を１か月後に改めて見直し、本当に欲しいものかどうかを判断するためのアプリになります。
-  </p>
+<head>
+ <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+</head>
+
+<div class="top-page">
+  <div class="wrapper top-box">
+    <h1><span>むだゼロ</span><br>muda0</h1>
+    <%= image_tag 'top_img.png', class: 'index_img' %>
+    <p>物欲を抑制し、<br class="mobile-br"><span class="orange">無駄遣い</span>を<span class="orange">０</span>へ</span></p>
+  
+    <div class="text-box">
+      <p>
+      欲しいものを登録し一度満足感を満たし、登録した商品を１か月後に改めて見直し、本当に欲しいものかどうかを判断するためのアプリになります。
+      </p>
+    </div>
+  
+
   <div class="button_wrap">
-    <%= link_to "新規登録", new_user_registration_path %>
-    <%# <button class="sign_in_button" type="button">新規登録</button> %>
+    <%= link_to(new_user_registration_path) do %>
+      <button class="sign-up-btn">はじめる</button>
+    <% end %>
   </div>
+  
   <div class="login_center">
-      <%= link_to "ログイン", new_user_session_path %>
+    <%= link_to(new_user_session_path) do %>
+      <button class="log-in-btn">ログイン</button>
+    <% end %>
   </div>
-
+  </div>
 </div>
-
