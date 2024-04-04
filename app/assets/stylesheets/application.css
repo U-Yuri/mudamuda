@@ -366,6 +366,72 @@ h1 span{
   border: solid orange 1.5px;
 }
 
+/* ログイン画面 */
+
+.devise-box{
+  background-color: white;
+  width: 250px;
+  padding: 25px;
+  border-radius: 10px;
+  margin: 30px auto;
+  box-shadow: 5px 5px 5px #ccc ;
+}
+
+.devise-box h2{
+  margin-top: 0;
+}
+
+.pass-box,
+.email-box{
+  width: 100%;
+}
+
+.signup-btn,
+.login-button{
+  border: 0;
+  line-height: 2.5;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow:
+    inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+  margin-top: 10px;
+}
+
+.login-button{
+  background-color: cadetblue;
+}
+
+.signup-btn{
+  background-color: orange;
+}
+
+.signup-btn:hover,
+.login-button:hover{
+  background-color: white;
+  color: #333333;
+  transition: 0.5s;
+}
+
+.login-button:hover{
+  border: solid cadetblue 1.5px;
+}
+
+.signup-btn:hover{
+  border: solid orange 1.5px;
+}
+
+.forget-text{
+  text-align: right;
+  font-size:0.8rem;
+  margin-bottom: 15px;
+}
+
+
 
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーーーレスポンシブ */
 
