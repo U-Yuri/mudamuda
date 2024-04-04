@@ -367,8 +367,6 @@ h1 span{
 }
 
 
-
-
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーーーレスポンシブ */
 
 @media screen and (max-width:600px){
@@ -544,9 +542,5 @@ h1 span{
 .edit-btn{
   margin-bottom: 70px;
 }
-
-
-
-
 
 }
