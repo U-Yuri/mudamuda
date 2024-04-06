@@ -18,7 +18,7 @@ class WantsController < ApplicationController
     else
       @wants = @wants.order(created_at: :desc)
     end
-    
+
     sum = 0
     @wants.each do |want|
       sum += want.money
@@ -34,10 +34,17 @@ class WantsController < ApplicationController
   end
 
   def new
+    @wants = Want.where(user_id: current_user.id)
+    sum = 0
+    @wants.each do |want|
+      sum += want.money
+    end
+    @sum = sum
+
     @categories = Category.all
     render "new"
     @wants = Want.new
-   
+
   end
 
   def create
@@ -54,6 +61,13 @@ class WantsController < ApplicationController
   end
 
   def show
+    @wants = Want.where(user_id: current_user.id)
+    sum = 0
+    @wants.each do |want|
+      sum += want.money
+    end
+    @sum = sum
+
     @wants = Want.find(params[:id])
     render "show"
   end
@@ -65,6 +79,13 @@ class WantsController < ApplicationController
   end
 
   def edit
+    @wants = Want.where(user_id: current_user.id)
+    sum = 0
+    @wants.each do |want|
+      sum += want.money
+    end
+    @sum = sum
+
     @categories = Category.all
     @wants = Want.find(params[:id])
     render "edit"

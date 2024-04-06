@@ -14,3 +14,19 @@
   <% end %>
 
 </div>
+
+<footer class="mobile_only">
+  <div class="menu-container">
+    <div>
+      <%= link_to(wants_path) do %>
+        <%= image_tag 'home.png', class: 'icon' %><br><small>ホーム</small>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to(wants_new_path) do %>
+        <%= image_tag 'add.png', class: 'icon' %><br><small>登録</small>
+      <% end %>
+    </div>
+    <div class="red">合計:<%= number_to_currency(@sum, unit: "¥", precision: 0) %></div>
+  </div>
+</footer>
