@@ -19,12 +19,18 @@ class WantsController < ApplicationController
       @wants = @wants.order(created_at: :desc)
     end
     
+    sum = 0
+    @wants.each do |want|
+      sum += want.money
+    end
+    @sum = sum
 
     if user_signed_in?
       render "wants/my_page"
     else
       redirect_to "/users/sign_in"
     end
+
   end
 
   def new
