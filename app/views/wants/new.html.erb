@@ -29,7 +29,7 @@
       <%= form.file_field :image, required: true %>
       
       <div><%= form.label :商品名 %> <%= form.text_field :name, required: true %></div>
-      <div><%= form.label :金額 %> <%= form.text_field :money, required: true %></div>
+      <div><%= form.label :金額 %> <%= form.text_field :money, required: true, pattern: "^[0-9]+$" %></div>
       <div><%= form.submit "新規登録", class: 'submit-button' %></div>
     <% end %>
   </div>
