@@ -43,7 +43,6 @@ class WantsController < ApplicationController
 
     @categories = Category.all
     render "new"
-    @wants = Want.new
 
   end
 

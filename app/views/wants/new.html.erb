@@ -19,7 +19,7 @@
 
 <div class="wrapper">
   <div class="form-box">
-    <%= form_with url: wants_path, model: @wants do |form| %>
+    <%= form_with url: wants_path do |form| %>
     <select name="category" >
         <% @categories.each do |category| %> 
             <option value= <%= category.id %> ><%= category.name %></option>
