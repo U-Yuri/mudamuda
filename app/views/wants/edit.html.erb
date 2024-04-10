@@ -1,17 +1,33 @@
+<head>
+ <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+</head>
+
+<header>
+  <div><h1><span class="logo-jp">むだゼロ</span><br>muda0</h1></div>
+  <div>
+    <%= link_to "欲しいものを登録", wants_new_path, class: "new_button" %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+  </div>
+</header>
+
 <div class="wrapper">
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-  <h1>Muda0</h1>
-  <%= form_with url: want_url(@wants), model: @wants do |form| %>
-    <select name="want[category_id]" >
-        <% @categories.each do |category| %>
-            <option value= <%= category.id %> ><%= category.name %></option>
-        <% end %>
-      </select>
-    <%= form.file_field :image %>
-    <div><%= form.label :商品名 %> <%= form.text_field :name %></div>
-    <div><%= form.label :金額 %> <%= form.text_field :money %></div>
-    <div><%= form.submit "変更する" %></div>
-  <% end %>
+  <div class="edit-form-box">
+  <div class="img-box">
+    <%= image_tag @wants.image.variant(resize_to_limit: [500, 500]), class: 'want-img' %>
+  </div>
+
+    <%= form_with url: want_url(@wants), model: @wants do |form| %>
+      <select name="want[category_id]" >
+          <% @categories.each do |category| %>
+              <option value= <%= category.id %> ><%= category.name %></option>
+          <% end %>
+        </select>
+      <%= form.file_field :image %>
+      <div><%= form.label :商品名 %> <%= form.text_field :name %></div>
+      <div><%= form.label :金額 %> <%= form.text_field :money %></div>
+      <div><%= form.submit "変更する" %></div>
+    <% end %>
+  </div>
 
 </div>
 

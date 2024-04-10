@@ -446,6 +446,19 @@ h1 span{
   transition: 0.2s;
 }
 
+/* 編集ページ */
+.edit-form-box{
+  width: 600px;
+  background-color: white;
+  padding: 20px 30px;
+  margin: 0 auto;
+  line-height: 2rem;
+}
+
+.img-box{
+  text-align: center;
+}
+
 
 
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーーーレスポンシブ */
@@ -622,6 +635,11 @@ h1 span{
 
 .edit-btn{
   margin-bottom: 70px;
+}
+
+.edit-form-box{
+  width: 100%;
+  padding: 0;
 }
 
 }
