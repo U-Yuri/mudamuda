@@ -10,7 +10,9 @@
   <h2>過去のお知らせ一覧</h2>
   <% @news.each do |anews| %>
     <%= form_with url: news_path(anews), method: :patch do |form|%>
-      <%= anews.title %>
+      <%= link_to(anews) do %>
+        <%= anews.title %>
+      <% end %>
       <%= form.button "削除", formmethod: :delete %>
     <% end %>
   <% end %>
