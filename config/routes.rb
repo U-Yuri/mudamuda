@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   get "wants/:id/edit", to: "wants#edit", as: 'edit_want'
   patch "wants/:id", to: "wants#update"
   get "admin", to: "admin#admin"
+  post "admin", to: "admin#create"
+  delete "news/:id", to: "admin#delete", as: 'news'
+  get "news/:id", to: "admin#show" 
 
   # resource :wants, only: [:wants]
 end

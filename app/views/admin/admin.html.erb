@@ -1,2 +1,18 @@
 <h1>お知らせ投稿画面</h1>
 
+<div class="wrapper">
+  <%= form_with url: admin_path do |form|%>
+    <%= form.label :タイトル %><br><%= form.text_field :title, required: true %><br>
+    <%= form.label :メッセージ %><br><%= form.text_area :message, required: true %><br>
+    <input type="submit" value="送信">
+  <% end %>
+
+  <h2>過去のお知らせ一覧</h2>
+  <% @news.each do |anews| %>
+    <%= form_with url: news_path(anews), method: :patch do |form|%>
+      <%= anews.title %>
+      <%= form.button "削除", formmethod: :delete %>
+    <% end %>
+  <% end %>
+
+</div>
