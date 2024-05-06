@@ -96,6 +96,17 @@ class WantsController < ApplicationController
     redirect_to "/wants"
   end
 
+  def message
+    @messages = News.all
+    render "message"
+  end
+
+  def message_show
+    @message = News.find(params[:id])
+    
+    render "message_show"
+  end
+
   private
 
   def want_params

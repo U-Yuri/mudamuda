@@ -1,0 +1,10 @@
+<h1>お知らせ</h1>
+<ul>
+  <% @messages.each do |message| %>
+    <li>
+      <%= link_to(message) do %>
+        <%= message.title%>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

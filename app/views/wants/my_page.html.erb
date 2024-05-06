@@ -5,6 +5,9 @@
 <header>
   <div><h1><span class="logo-jp">むだゼロ</span><br>muda0</h1></div>
   <div>
+    <%= link_to(message_path) do %>
+      <%= image_tag 'mail.png' %>
+    <% end %>
     <%= link_to "欲しいものを登録", wants_new_path, class: "new_button" %>
     <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
   </div>
