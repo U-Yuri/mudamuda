@@ -103,8 +103,11 @@ class WantsController < ApplicationController
 
   def message_show
     @message = News.find(params[:id])
-    
+
     render "message_show"
+  end
+
+  def clicked_create
   end
 
   private
