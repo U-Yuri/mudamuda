@@ -2,9 +2,7 @@
 <ul>
   <% @messages.each do |message| %>
     <li>
-      <%= link_to(message) do %>
-        <%= message.title%>
-      <% end %>
+      <%= link_to message.title, message_path(message) %>
     </li>
   <% end %>
 </ul>
