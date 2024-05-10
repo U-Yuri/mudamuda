@@ -104,11 +104,17 @@ class WantsController < ApplicationController
   def message_show
     @message = News.find(params[:news_id])
 
-    Click.create!(
-      clicked: params[:created],
-      user_id: current_user.id,
-      news_id: params[:news_id]
-    )
+    already_clicked = Click.find_by(news_id: params[:news_id], user_id: current_user.id)
+    
+    p already_clicked
+
+    if already_clicked.nil?
+      Click.create!(
+        clicked: params[:created],
+        user_id: current_user.id,
+        news_id: params[:news_id]
+      )
+    end
     
 
     render "message_show"
