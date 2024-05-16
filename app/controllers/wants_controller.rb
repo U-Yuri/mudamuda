@@ -98,6 +98,9 @@ class WantsController < ApplicationController
 
   def message
     @messages = News.all
+
+    # @already_clicked = Click.where(news_id: params[:news_id], user_id: current_user.id)
+    
     render "message"
   end
 

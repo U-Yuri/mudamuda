@@ -2,6 +2,9 @@
 <ul>
   <% @messages.each do |message| %>
     <li>
+      <% if message.current_user_clicked(current_user).nil? %>
+        <small>new</small>
+      <% end %>
       <%= link_to message.title, message_path(message) %>
     </li>
   <% end %>
