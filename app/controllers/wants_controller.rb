@@ -1,6 +1,8 @@
 class WantsController < ApplicationController
   def my_page
     @categories = Category.all
+
+    @messages = News.all
     
     # if params["順番"] == "古い"
     #   @wants = Want.where(user_id: current_user.id).order(created_at: :asc)

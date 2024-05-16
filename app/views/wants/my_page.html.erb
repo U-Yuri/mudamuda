@@ -4,12 +4,19 @@
 
 <header>
   <div><h1><span class="logo-jp">むだゼロ</span><br>muda0</h1></div>
-  <div>
-    <%= link_to(messages_path) do %>
-      <%= image_tag 'mailicon.png' %>
-    <% end %>
-    <%= link_to "欲しいものを登録", wants_new_path, class: "new_button" %>
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+  <div class="flex_menu">
+    <div class="layer">
+      <%= link_to(messages_path) do %>
+        <%= image_tag 'mailicon.png' %>
+        <% @messages.each do |message|%>
+          <% if message.current_user_clicked(current_user).nil? %>
+            <p>●</p>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+    <div><%= link_to "欲しいものを登録", wants_new_path, class: "new_button" %></div>
+    <div><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
   </div>
 </header>
 
