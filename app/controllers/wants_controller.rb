@@ -1,6 +1,8 @@
 class WantsController < ApplicationController
   def my_page
     @categories = Category.all
+
+    @messages = News.all
     
     # if params["順番"] == "古い"
     #   @wants = Want.where(user_id: current_user.id).order(created_at: :asc)
@@ -94,6 +96,31 @@ class WantsController < ApplicationController
     @wants = Want.find(params[:id])
     @wants.update(want_params)
     redirect_to "/wants"
+  end
+
+  def message
+    @messages = News.all
+
+    # @already_clicked = Click.where(news_id: params[:news_id], user_id: current_user.id)
+    
+    render "message"
+  end
+
+  def message_show
+    @message = News.find(params[:news_id])
+
+    already_clicked = Click.find_by(news_id: params[:news_id], user_id: current_user.id)
+    
+    if already_clicked.nil?
+      Click.create!(
+        clicked: params[:created],
+        user_id: current_user.id,
+        news_id: params[:news_id]
+      )
+    end
+    
+
+    render "message_show"
   end
 
   private

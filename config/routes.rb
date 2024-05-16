@@ -19,7 +19,9 @@ Rails.application.routes.draw do
   get "admin", to: "admin#admin"
   post "admin", to: "admin#create"
   delete "news/:id", to: "admin#delete", as: 'news'
-  get "news/:id", to: "admin#show" 
-
+  get "news/:id", to: "admin#show"
+  get "/messages", to: "wants#message"
+  get "/messages/:news_id", to: "wants#message_show", as: 'message'
+  
   # resource :wants, only: [:wants]
 end
