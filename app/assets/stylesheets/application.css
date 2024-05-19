@@ -29,6 +29,10 @@ a{
   color: #333333;
 }
 
+ul{
+  list-style: none;
+}
+
 /* トップページ */
 
  /* .sign_in_button {
@@ -477,6 +481,28 @@ h1 span{
   text-align: center;
 }
 
+/* お知らせ一覧ページ */
+.news_box{
+  width: 600px;
+  margin: 0 auto;
+}
+
+.news_list{
+  margin: 20px;
+}
+
+.red{
+  color: red;
+}
+
+.news_box h1{
+  margin: 60px;
+}
+
+.time_margin{
+  margin-right: 20px;
+}
+
 
 
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーーーレスポンシブ */
@@ -658,6 +684,19 @@ h1 span{
 .edit-form-box{
   width: 100%;
   padding: 0;
+}
+
+/* news一覧ページ */
+.news_box{
+  width:100%;
+}
+
+.news_list{
+  margin: 25px 0;
+}
+
+.news_box h1{
+  margin: 35px 0;
 }
 
 }
