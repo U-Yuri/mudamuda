@@ -1,2 +1,42 @@
+<head>
+ <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+</head>
+
+<header>
+  <div><h1><span class="logo-jp">むだゼロ</span><br>muda0</h1></div>
+  <div class="flex_menu">
+    <div class="layer pc-only">
+      <%= link_to(messages_path) do %>
+        <%= image_tag 'mailicon.png' %>
+        <% @messages.each do |message|%>
+          <% if message.current_user_clicked(current_user).nil? %>
+            <p>●</p>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+    <div><%= link_to "欲しいものを登録", wants_new_path, class: "new_button" %></div>
+    <div><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
+  </div>
+</header>
+
+<div class="news_wrapper">
 <h1><%= @message.title %></h2>
+<small class="time_margin"><%= @message.created_at.strftime('%Y/%m/%d') %></small><br class="mobile-br">
 <p><%= @message.message %></p>
+
+<footer class="mobile_only">
+  <div class="menu-container">
+    <div>
+      <%= link_to(wants_path) do %>
+        <%= image_tag 'home.png', class: 'icon' %><br>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to(wants_new_path) do %>
+        <%= image_tag 'add.png', class: 'icon' %><br>
+      <% end %>
+    </div>
+    <div class="red">合計:<%= number_to_currency(@sum) %></div>
+  </div>
+</footer>

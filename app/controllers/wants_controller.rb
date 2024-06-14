@@ -107,6 +107,7 @@ class WantsController < ApplicationController
   end
 
   def message_show
+    @messages = News.all
     @message = News.find(params[:news_id])
 
     already_clicked = Click.find_by(news_id: params[:news_id], user_id: current_user.id)
