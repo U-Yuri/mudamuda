@@ -50,6 +50,16 @@
         <%= image_tag 'add.png', class: 'icon' %><br>
       <% end %>
     </div>
+    <div class="layer">
+      <%= link_to(messages_path) do %>
+        <%= image_tag 'mail.png', class: "mb_mail_icon"%>
+        <% @messages.each do |message|%>
+          <% if message.current_user_clicked(current_user).nil? %>
+            <p class="p">●</p>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
     <div class="red">合計:<%= number_to_currency(@sum) %></div>
   </div>
 </footer>
