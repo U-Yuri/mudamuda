@@ -3,9 +3,11 @@
 </head>
 
 <header>
-  <div><h1><span class="logo-jp">むだゼロ</span><br>muda0</h1></div>
+  <%= link_to(wants_path) do %>
+    <div><h1><span class="logo-jp">むだゼロ</span><br>muda0</h1></div>
+  <% end %>
   <div class="flex_menu">
-    <div class="layer">
+    <div class="layer pc-only">
       <%= link_to(messages_path) do %>
         <%= image_tag 'mailicon.png' %>
         <% @messages.each do |message|%>
@@ -56,7 +58,7 @@
               <div class="under">
                 <%= want.name %>
                 <small><%= want.category.name %></small><br>
-                <small><%= want.created_at %></small>
+                <small><%= want.created_at.strftime('%Y-%m-%d %H:%M:%S') %></small>
               </div>
             </div>
         <% end %>
@@ -70,12 +72,22 @@
   <div class="menu-container">
     <div>
       <%= link_to(wants_path) do %>
-        <%= image_tag 'home.png', class: 'icon' %><br><small>ホーム</small>
+        <%= image_tag 'home.png', class: 'icon' %><br>
       <% end %>
     </div>
     <div>
       <%= link_to(wants_new_path) do %>
-        <%= image_tag 'add.png', class: 'icon' %><br><small>登録</small>
+        <%= image_tag 'add.png', class: 'icon' %><br>
+      <% end %>
+    </div>
+    <div class="layer">
+      <%= link_to(messages_path) do %>
+        <%= image_tag 'mail.png', class: "mb_mail_icon"%>
+        <% @messages.each do |message|%>
+          <% if message.current_user_clicked(current_user).nil? %>
+            <p class="p">●</p>
+          <% end %>
+        <% end %>
       <% end %>
     </div>
     <div class="red">合計:<%= number_to_currency(@sum) %></div>

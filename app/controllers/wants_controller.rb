@@ -36,6 +36,7 @@ class WantsController < ApplicationController
   end
 
   def new
+    @messages = News.all
     @wants = Want.where(user_id: current_user.id)
     sum = 0
     @wants.each do |want|
@@ -62,6 +63,7 @@ class WantsController < ApplicationController
   end
 
   def show
+    @messages = News.all
     @wants = Want.where(user_id: current_user.id)
     sum = 0
     @wants.each do |want|
@@ -80,6 +82,7 @@ class WantsController < ApplicationController
   end
 
   def edit
+    @messages = News.all
     @wants = Want.where(user_id: current_user.id)
     sum = 0
     @wants.each do |want|
@@ -100,6 +103,12 @@ class WantsController < ApplicationController
 
   def message
     @messages = News.all
+    @wants = Want.where(user_id: current_user.id)
+    sum = 0
+    @wants.each do |want|
+      sum += want.money
+    end
+    @sum = sum
 
     # @already_clicked = Click.where(news_id: params[:news_id], user_id: current_user.id)
     
@@ -107,7 +116,14 @@ class WantsController < ApplicationController
   end
 
   def message_show
+    @messages = News.all
     @message = News.find(params[:news_id])
+    @wants = Want.where(user_id: current_user.id)
+    sum = 0
+    @wants.each do |want|
+      sum += want.money
+    end
+    @sum = sum
 
     already_clicked = Click.find_by(news_id: params[:news_id], user_id: current_user.id)
     
