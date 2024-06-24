@@ -13,8 +13,8 @@ https://mudazero.uezono.studio/
 2. 欲しいものを登録する（画像、商品名、金額）。
 3. １ヶ月後にもう一度見直し購入するか、削除するか判断する。
 ## 使用技術
-- ruby 3.1.2p20
-- rails 7.0.8
+- ruby
+- rails
 - html css
 - sqlite3
 - さくらvps
