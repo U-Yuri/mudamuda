@@ -28,4 +28,23 @@ https://mudazero.uezono.studio/
 - 画像投稿機能（Active　Storage）
 ## 使用Gem
 - devise-i18n(deviseの多言語化)
-- rails-i18n　
+- rails-i18n
+## デプロイ（アップデート）に必要な操作
+- 以下のコードで本番環境に切り替えてからサーバを立ち上げる
+  ```bash
+  export RAILS_ENV=production
+  ```
+- 画像を変更および更新した際コンパイルする必要あり
+  （本番環境と開発環境ではパスが異なるため）
+```bash
+RAILS_ENV=production rails assets:precompile
+```
+- 更新したら以下のコードでサーバーリスタートし確認
+  ```bash
+  $ sudo systemctl restart mudazero.service
+  ```
+- DBを新たに設計したらマイグレートする
+  ```bash
+  $ rails db:migratem
+  ```
+
