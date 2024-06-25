@@ -43,7 +43,7 @@ https://mudazero.uezono.studio/
   ```bash
   $ rails db:migrate
   ```
-- 更新したら以下のコードでサーバーリスタートし確認
+- 更新したら以下のコードでサーバリスタートし確認
   ```bash
   $ sudo systemctl restart mudazero.service
   ```
