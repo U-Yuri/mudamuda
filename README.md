@@ -9,8 +9,6 @@ https://mudazero.uezono.studio/
 ## ER図
 ![スクリーンショット 2024-06-25 15 10 44](https://github.com/U-Yuri/mudamuda/assets/80314978/dc3cc0c6-43cb-4843-9fc9-826de1ef929b)
 
-```
-
 ## 画面遷移図
 ![スクリーンショット 2024-06-24 15 02 23](https://github.com/U-Yuri/mudamuda/assets/80314978/93b3c887-a394-4965-9269-17b718f8a664)
 ## 使用方法
