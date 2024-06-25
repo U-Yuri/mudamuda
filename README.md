@@ -7,7 +7,8 @@ https://mudazero.uezono.studio/
 お金の無駄使いを減らし、ミニマリストを目指すアプリ。
 物欲を減らす理論に基づき作成し、１ヶ月後に見返し本当に必要であれば購入、１ヶ月後に見返し欲しくないものであれば削除する、という趣旨のアプリ。
 ## ER図
-![image_6487327](https://github.com/U-Yuri/mudamuda/assets/80314978/d9ac338c-aede-4f79-9ab8-760e89b6959e)
+![スクリーンショット 2024-06-25 14 51 13](https://github.com/U-Yuri/mudamuda/assets/80314978/d40b9426-6f85-4690-ab59-68e1dc57841d)
+
 ## 画面遷移図
 ![スクリーンショット 2024-06-24 15 02 23](https://github.com/U-Yuri/mudamuda/assets/80314978/93b3c887-a394-4965-9269-17b718f8a664)
 ## 使用方法
